@@ -3,6 +3,7 @@
     package="com.lz.www.ambrm">
 
     <application
+        android:name="com.lz.www.ambrm.util.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -19,6 +20,8 @@
         <activity android:name=".ui.HomeActivity"/>
         <activity android:name=".ui.NewsDetailActivity"/>
         <activity android:name=".ui.ServiceActivity"/>
+        <activity android:name=".ui.NewsIndexActivity"/>
+        <activity android:name=".ui.RegisterActivity"/>
 
          <receiver android:name=".Broadcast.MyBroadcastReceiver">
              <intent-filter>
@@ -26,7 +29,9 @@
              </intent-filter>
          </receiver>
 
-        <service android:name=".Service.MyService"/>
+
+
+
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
 

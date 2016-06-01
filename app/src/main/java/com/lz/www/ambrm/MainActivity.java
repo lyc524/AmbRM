@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import com.lz.www.ambrm.ui.LoginActivity;
 import com.lz.www.ambrm.ui.NewsDetailActivity;
+import com.lz.www.ambrm.ui.NewsIndexActivity;
 import com.lz.www.ambrm.ui.ServiceActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         btnOpenLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it = new Intent(MainActivity.this, ServiceActivity.class);
+                Intent it = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(it);
             }
         });
