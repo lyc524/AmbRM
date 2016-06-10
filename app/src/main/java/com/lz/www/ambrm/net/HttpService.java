@@ -18,7 +18,7 @@ public class HttpService {
     /**
      * Get请求方法
      */
-    public String sendGetRequest(String url) {
+    public static String sendGetRequest(String url) {
         HttpURLConnection connection = null;
         String response="";
         try {
@@ -48,7 +48,7 @@ public class HttpService {
     /**
      * POST请求方法
      */
-    public String sendPostRequest(String url,String params){
+    public static String sendPostRequest(String url,String params){
         //params="key1=value1&key2=value2";
         HttpURLConnection connection = null;
         String response="";

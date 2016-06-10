@@ -1,19 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <fragment
-        android:id="@+id/fgmHomeContent"
-        android:name="com.lz.www.ambrm.ui.HomeContentFragment"
+    <RelativeLayout
+        android:id="@+id/homeTopBar"
         android:layout_width="match_parent"
-        android:layout_height="100dp"/>
+        android:layout_height="50dp"
+        android:background="#99dd66">
+        <TextView
+            android:id="@+id/tvHomeTop"
+            android:text="阿米巴"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-    <fragment
-        android:id="@+id/fgmHomeTab"
-        android:name="com.lz.www.ambrm.ui.HomeTabFragment"
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#000"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+
+    <!--
+    <LinearLayout
+        android:id="@+id/homeBottomBar"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+        android:layout_height="60dp">
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/tvDao"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tab_menu_bg"
+            android:drawablePadding="3dp"
+            android:drawableTop="@drawable/tab_menu_dao"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="道"
+            android:textColor="@drawable/tab_menu_text"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvFa"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tab_menu_bg"
+            android:drawablePadding="3dp"
+            android:drawableTop="@drawable/tab_menu_fa"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="法"
+            android:textColor="@drawable/tab_menu_text"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvShu"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tab_menu_bg"
+            android:drawablePadding="3dp"
+            android:drawableTop="@drawable/tab_menu_shu"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="术"
+            android:textColor="@drawable/tab_menu_text"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvQi"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tab_menu_bg"
+            android:drawablePadding="3dp"
+            android:drawableTop="@drawable/tab_menu_qi"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="器"
+            android:textColor="@drawable/tab_menu_text"
+            android:textSize="16sp" />
+    </LinearLayout>
+-->
+
+    <RadioGroup
+        android:id="@+id/homeTabBar"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <RadioButton
+            android:id="@+id/itemDAO"
+            style="@style/homeTabItem"
+            android:drawableTop="@drawable/tab_menu_dao"
+            android:text="@string/dao"/>
+
+        <RadioButton
+            android:id="@+id/itemFA"
+            style="@style/homeTabItem"
+            android:drawableTop="@drawable/tab_menu_fa"
+            android:text="@string/fa"/>
+
+        <RadioButton
+            android:id="@+id/itemSHU"
+            style="@style/homeTabItem"
+            android:drawableTop="@drawable/tab_menu_shu"
+            android:text="@string/shu"/>
+
+        <RadioButton
+            android:id="@+id/itemQI"
+            style="@style/homeTabItem"
+            android:drawableTop="@drawable/tab_menu_qi"
+            android:text="@string/qi"/>
+
+
+    </RadioGroup>
+
+
+    <FrameLayout
+        android:id="@+id/homeContent"
+        android:background="#eee"
+        android:layout_above="@+id/homeTabBar"
+        android:layout_below="@+id/homeTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+
+</RelativeLayout>

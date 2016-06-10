@@ -15,7 +15,8 @@ import com.lz.www.ambrm.R;
  */
 public class HomeActivity extends Activity implements RadioGroup.OnCheckedChangeListener{
 
-    private HomeContentFragment fg1,fg2,fg3,fg4;
+    private DaoFragment fg1;
+    private HomeContentFragment fg2,fg3,fg4;
     private FragmentManager fm;
 
 //    private TextView _tvHomeTop;
@@ -80,7 +81,7 @@ public class HomeActivity extends Activity implements RadioGroup.OnCheckedChange
                 //setTextNoSelected();
                 //_tvDao.setSelected(true);
                 if(fg1 == null){
-                    fg1 = new HomeContentFragment(getString(R.string.dao));
+                    fg1 = new DaoFragment();
                     ft.add(R.id.homeContent,fg1);
                 }else{
                     ft.show(fg1);
