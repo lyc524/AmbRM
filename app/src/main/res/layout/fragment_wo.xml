@@ -2,13 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.lz.www.ambrm.ui.DaoFragment">
+    tools:context="com.lz.www.ambrm.ui.WoFragment"
+    android:background="#0000ff">
 
     <!-- TODO: Update blank fragment layout -->
-    <ListView
-        android:id="@+id/lvDao"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </ListView>
+        android:layout_height="match_parent"
+        android:text="我" />
 
 </FrameLayout>

@@ -23,14 +23,14 @@ public class NewsDetailActivity extends Activity {
         webView.setWebViewClient(new MyWebViewClient());
     }
 
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if((keyCode==KeyEvent.KEYCODE_BACK)&&webView.canGoBack()){
-            webView.goBack();
-            return true;
-        }
-        return false;
-    }
+//    @Override
+//    public boolean onKeyDown(int keyCode, KeyEvent event) {
+//        if((keyCode==KeyEvent.KEYCODE_BACK)&&webView.canGoBack()){
+//            webView.goBack();
+//            return true;
+//        }
+//        return false;
+//    }
 
     private class MyWebViewClient extends WebViewClient{
         @Override

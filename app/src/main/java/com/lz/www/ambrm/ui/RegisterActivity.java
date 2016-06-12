@@ -7,11 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.lz.www.ambrm.R;
-import com.lz.www.ambrm.net.HttpService;
 import com.lz.www.ambrm.net.RegisterAsyncTask;
 import com.lz.www.ambrm.util.Config;
 
@@ -25,7 +22,7 @@ public class RegisterActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.register_layout);
+        setContentView(R.layout.activity_register);
 
         mPB=(ProgressBar)findViewById(R.id.pbRegister);
         mPB.setVisibility(View.INVISIBLE);

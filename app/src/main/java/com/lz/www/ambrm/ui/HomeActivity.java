@@ -6,7 +6,6 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 
 import com.lz.www.ambrm.R;
 
@@ -16,15 +15,11 @@ import com.lz.www.ambrm.R;
 public class HomeActivity extends Activity implements RadioGroup.OnCheckedChangeListener{
 
     private DaoFragment fg1;
-    private HomeContentFragment fg2,fg3,fg4;
+    private FaFragment fg2;
+    private ShuFragment fg3;
+    private WoFragment fg4;
     private FragmentManager fm;
 
-//    private TextView _tvHomeTop;
-//    private TextView _tvDao;
-//    private TextView _tvFa;
-//    private TextView _tvShu;
-//    private TextView _tvQi;
-//    private FrameLayout _homeContent;
 
     private RadioGroup _homeTabBar;
     private RadioButton _itemDao;
@@ -37,18 +32,10 @@ public class HomeActivity extends Activity implements RadioGroup.OnCheckedChange
         if(fg4!=null)ft.hide(fg4);
     }
 
-//    private void setTextNoSelected(){
-//        _tvDao.setSelected(false);
-//        _tvFa.setSelected(false);
-//        _tvShu.setSelected(false);
-//        _tvQi.setSelected(false);
-//    }
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_layout);
+        setContentView(R.layout.activity_home);
         fm=getFragmentManager();
         _homeTabBar=(RadioGroup)findViewById(R.id.homeTabBar);
         _homeTabBar.setOnCheckedChangeListener(this);
@@ -57,20 +44,6 @@ public class HomeActivity extends Activity implements RadioGroup.OnCheckedChange
         // bindViews();
         //_tvDao.performClick();
     }
-
-//    private void bindViews() {
-//        _tvHomeTop = (TextView) findViewById(R.id.tvHomeTop);
-//        _tvDao = (TextView) findViewById(R.id.tvDao);
-//        _tvFa = (TextView) findViewById(R.id.tvFa);
-//        _tvShu = (TextView) findViewById(R.id.tvShu);
-//        _tvQi = (TextView) findViewById(R.id.tvQi);
-//
-//        _tvDao.setOnClickListener(this);
-//        _tvFa.setOnClickListener(this);
-//        _tvShu.setOnClickListener(this);
-//        _tvQi.setOnClickListener(this);
-//
-//    }
 
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -89,7 +62,7 @@ public class HomeActivity extends Activity implements RadioGroup.OnCheckedChange
                 break;
             case R.id.itemFA:
                 if(fg2 == null){
-                    fg2 = new HomeContentFragment(getString(R.string.fa));
+                    fg2 = new FaFragment();
                     ft.add(R.id.homeContent,fg2);
                 }else{
                     ft.show(fg2);
@@ -97,15 +70,15 @@ public class HomeActivity extends Activity implements RadioGroup.OnCheckedChange
                 break;
             case R.id.itemSHU:
                 if(fg3 == null){
-                    fg3 = new HomeContentFragment(getString(R.string.shu));
+                    fg3 = new ShuFragment();
                     ft.add(R.id.homeContent,fg3);
                 }else{
                     ft.show(fg3);
                 }
                 break;
-            case R.id.itemQI:
+            case R.id.itemWO:
                 if(fg4 == null){
-                    fg4 = new HomeContentFragment(getString(R.string.qi));
+                    fg4 = new WoFragment();
                     ft.add(R.id.homeContent,fg4);
                 }else{
                     ft.show(fg4);
