@@ -6,10 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.lz.www.ambrm.ui.LoginActivity;
-import com.lz.www.ambrm.ui.NewsDetailActivity;
-import com.lz.www.ambrm.ui.NewsIndexActivity;
-import com.lz.www.ambrm.ui.ServiceActivity;
+import com.lz.www.ambrm.ui.HomeActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         btnOpenLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it = new Intent(MainActivity.this, LoginActivity.class);
+                Intent it = new Intent(MainActivity.this, HomeActivity.class);
                 startActivity(it);
             }
         });

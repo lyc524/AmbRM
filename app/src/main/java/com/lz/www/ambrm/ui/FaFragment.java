@@ -1,83 +1,71 @@
 package com.lz.www.ambrm.ui;
 
 import android.app.Fragment;
-import android.content.Context;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ExpandableListView;
-import android.widget.Toast;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import com.lz.www.ambrm.R;
-import com.lz.www.ambrm.model.BigSorts;
-import com.lz.www.ambrm.model.SubSorts;
-
-import java.util.ArrayList;
 
 /**
- * Created by Administrator on 2016-06-04.
+ * Created by Administrator on 2016-06-23.
  */
-public class FaFragment extends Fragment {
+public class FaFragment extends Fragment implements RadioGroup.OnCheckedChangeListener {
 
-    private ArrayList<BigSorts> groupList = null;
-    private ArrayList<ArrayList<SubSorts>> subListList = null;
-    private ArrayList<SubSorts> subList = null;
-    private Context mContext;
-    private ExpandableListView elvFa;
-    private FaAdapter faAdapter = null;
+    private ReportFragment fg1;
+    private SbuFragment fg2;
+    private FragmentManager fm;
 
+    private RadioGroup mFaTabBar;
+    private RadioButton mTabReport;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_fa,container,false);
-
-        mContext=getActivity();
-        elvFa=(ExpandableListView) view.findViewById(R.id.elvFa);
-
-        //数据准备
-        groupList = new ArrayList<BigSorts>();
-        groupList.add(new BigSorts("收入"));
-        groupList.add(new BigSorts("费用"));
-        groupList.add(new BigSorts("利润"));
-
-        subListList = new ArrayList<ArrayList<SubSorts>>();
-
-        subList = new ArrayList<SubSorts>();
-
-        //收入组
-        subList.add(new SubSorts("001","A商品销售"));
-        subList.add(new SubSorts("002","B商品销售"));
-        subList.add(new SubSorts("003","C商品销售"));
-        subListList.add(subList);
-
-        //费用组
-        subList = new ArrayList<SubSorts>();
-        subList.add(new SubSorts("001","变动费用"));
-        subList.add(new SubSorts("002","固定费用"));
-        subList.add(new SubSorts("003","人工成本"));
-        subListList.add(subList);
-
-        //利润组
-        subList = new ArrayList<SubSorts>();
-        subList.add(new SubSorts("001","销售利润"));
-        subList.add(new SubSorts("002","节约利润"));
-        subList.add(new SubSorts("003","固定资产"));
-        subListList.add(subList);
-
-        faAdapter=new FaAdapter(groupList,subListList,mContext);
-        elvFa.setAdapter(faAdapter);
-
-        elvFa.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-            @Override
-            public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
-                Toast.makeText(mContext, "你点击了：" + subListList.get(i).get(i1).getName(), Toast.LENGTH_SHORT).show();
-                return true;
-            }
-        });
+        fm=getFragmentManager();
+        mFaTabBar=(RadioGroup)view.findViewById(R.id.faTopTab);
+        mFaTabBar.setOnCheckedChangeListener(this);
+        mTabReport=(RadioButton)view.findViewById(R.id.tabReport);
+        mTabReport.setChecked(true);
 
         return view;
+    }
+
+    private void hideAllFragment(FragmentTransaction ft){
+        if(fg1!=null)ft.hide(fg1);
+        if(fg2!=null)ft.hide(fg2);
+    }
+
+    @Override
+    public void onCheckedChanged(RadioGroup radioGroup, int i) {
+        FragmentTransaction ft = fm.beginTransaction();
+        hideAllFragment(ft);
+        switch (i) {
+            case R.id.tabReport:
+                if (fg1 == null) {
+                    fg1 = new ReportFragment();
+                    ft.add(R.id.faContent, fg1);
+                } else {
+                    ft.show(fg1);
+                }
+                break;
+            case R.id.tabSub:
+                if (fg2 == null) {
+                    fg2 = new SbuFragment();
+                    ft.add(R.id.faContent, fg2);
+                } else {
+                    ft.show(fg2);
+                }
+                break;
+        }
+        ft.commit();
+
     }
 }

@@ -16,7 +16,7 @@ public class HomeActivity extends Activity implements RadioGroup.OnCheckedChange
 
     private DaoFragment fg1;
     private FaFragment fg2;
-    private ShuFragment fg3;
+    private SbuFragment fg3;
     private WoFragment fg4;
     private FragmentManager fm;
 
@@ -70,7 +70,7 @@ public class HomeActivity extends Activity implements RadioGroup.OnCheckedChange
                 break;
             case R.id.itemSHU:
                 if(fg3 == null){
-                    fg3 = new ShuFragment();
+                    fg3 = new SbuFragment();
                     ft.add(R.id.homeContent,fg3);
                 }else{
                     ft.show(fg3);
