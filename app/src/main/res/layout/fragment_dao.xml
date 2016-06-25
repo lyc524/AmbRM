@@ -5,15 +5,10 @@
     tools:context="com.lz.www.ambrm.ui.DaoFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <!--<ListView-->
-        <!--android:id="@+id/lvDao"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent">-->
-    <!--</ListView>-->
-    <Button
-        android:id="@+id/btnToList"
-        android:text="turn listview"
+    <ListView
+        android:id="@+id/lvDao"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent">
+    </ListView>
 
 </FrameLayout>

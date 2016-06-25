@@ -12,7 +12,6 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -22,6 +21,7 @@
         <activity android:name=".ui.ServiceActivity"/>
         <activity android:name=".ui.NewsIndexActivity"/>
         <activity android:name=".ui.RegisterActivity"/>
+        <activity android:name=".rubbish.WelcomeActivity"/>
 
          <receiver android:name=".Broadcast.MyBroadcastReceiver">
              <intent-filter>
