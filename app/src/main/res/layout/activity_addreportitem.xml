@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_actionbar"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="上级科目:"
+            android:layout_marginLeft="60dp"
+            android:gravity="center_vertical"
+            android:layout_width="80dp"
+            android:layout_height="50dp" />
+        <Spinner
+            android:id="@+id/spReportFather"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="科目名称:"
+            android:layout_marginLeft="60dp"
+            android:gravity="center_vertical"
+            android:layout_width="80dp"
+            android:layout_height="50dp" />
+        <EditText
+            android:id="@+id/etReportName"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnReportSure"
+        android:text="添   加"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
