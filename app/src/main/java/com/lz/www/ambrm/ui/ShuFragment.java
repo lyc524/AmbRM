@@ -1,14 +1,17 @@
 package com.lz.www.ambrm.ui;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import com.lz.www.ambrm.R;
 
@@ -52,6 +55,22 @@ public class ShuFragment extends Fragment {
         //配置适配器
         gridView.setAdapter(mAdapter);
 
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i){
+                    case 0:
+                        Intent it=new Intent(getActivity(),ContractsActivity.class);
+                        startActivity(it);
+                        break;
+                    default:
+                        Toast.makeText(getActivity(),"你点击了第" + i + "项",Toast.LENGTH_SHORT).show();
+                        break;
+
+                }
+              //  Toast.makeText(getActivity(),"你点击了第" + i + "项",Toast.LENGTH_SHORT).show();
+            }
+        });
 
         return view;
     }

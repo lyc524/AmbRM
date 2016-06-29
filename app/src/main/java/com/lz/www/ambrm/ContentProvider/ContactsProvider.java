@@ -24,7 +24,7 @@ public class ContactsProvider {
      * 获取手机号返回实体集
      *
      * */
-    private ArrayList<Contacts> getContacts(Context context){
+    public ArrayList<Contacts> getContacts(Context context){
 
         ArrayList<Contacts> list=new ArrayList<Contacts>();
         ContentResolver resolver=context.getContentResolver();

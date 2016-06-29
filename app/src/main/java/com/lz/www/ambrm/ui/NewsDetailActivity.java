@@ -32,11 +32,15 @@ public class NewsDetailActivity extends Activity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                webView.goBack();
+                if(webView.canGoBack())
+                    webView.goBack();
+                else
+                    finish();
             }
         });
 
         Button btnAhead=(Button)findViewById(R.id.btnForward);
+        btnAhead.setVisibility(View.VISIBLE);
         btnAhead.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

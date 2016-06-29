@@ -26,7 +26,7 @@
             android:id="@+id/tvMeHead"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="点击登录"
+            android:text="修改头像"
             android:paddingLeft="2dp"
             android:layout_toRightOf="@id/ivMeLogo"
             android:layout_centerVertical="true"

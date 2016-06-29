@@ -8,7 +8,7 @@
     <RelativeLayout
         android:id="@+id/homeTopBar"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="30dp"
         android:background="#99dd66">
         <TextView
             android:id="@+id/tvHomeTop"
