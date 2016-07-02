@@ -10,15 +10,24 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.Buffer;
 
+import javax.security.auth.callback.Callback;
+
 /**
  * Created by Administrator on 2016-05-24.
  */
 public class HttpService {
 
+    public interface HttpCallBack
+    {
+        void onRequestComplete(String result);
+    }
+
+
+
     /**
      * Get请求方法
      */
-    public static String sendGetRequest(String url) {
+    public static String doGet(String url) {
         HttpURLConnection connection = null;
         String response="";
         try {
@@ -48,7 +57,7 @@ public class HttpService {
     /**
      * POST请求方法
      */
-    public static String sendPostRequest(String url,String params){
+    public static String doPost(String url,String params){
         //params="key1=value1&key2=value2";
         HttpURLConnection connection = null;
         String response="";
@@ -98,4 +107,47 @@ public class HttpService {
         }
         return response;
     }
+
+
+    /***
+     * 异步GET请求
+     *
+     * */
+    public static void doGetAsyn(final String url, final HttpCallBack callback) {
+        new Thread() {
+            public void run() {
+                try {
+                    String result = doGet(url);
+                    if (callback != null) {
+                        callback.onRequestComplete(result);
+                    }
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            };
+        }.start();
+    }
+
+    /***
+     * 异步POST请求
+     *
+     * */
+    public static void doPostAsyn(final String url,final String params,final HttpCallBack callBack) throws Exception {
+
+        new Thread(){
+            public void run(){
+              try {
+                  String result=doPost(url,params);
+                  if(callBack!=null){
+                      callBack.onRequestComplete(result);
+                  }
+              }catch (Exception ex){
+                  ex.printStackTrace();
+              }
+            };
+        }.start();
+
+    }
+
+
 }

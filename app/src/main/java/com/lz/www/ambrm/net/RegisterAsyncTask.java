@@ -40,7 +40,7 @@ public class RegisterAsyncTask extends AsyncTask<String,Integer,String> {
                 Thread.sleep(2000);
                 publishProgress(i);
             }
-            re = HttpService.sendGetRequest(mURL);
+            re = HttpService.doGet(mURL);
 
         } catch (InterruptedException e) {
             e.printStackTrace();

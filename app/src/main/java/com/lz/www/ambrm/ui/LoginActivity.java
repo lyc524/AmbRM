@@ -64,7 +64,7 @@ public class LoginActivity extends Activity {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                       String re = HttpService.sendGetRequest(url);
+                       String re = HttpService.doGet(url);
                         Message msg=new Message();
                         msg.obj=re;
                         handler.sendMessage(msg);
