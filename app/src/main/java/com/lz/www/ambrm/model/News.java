@@ -1,52 +1,91 @@
 package com.lz.www.ambrm.model;
 
+import java.util.Date;
+
 /**
  * Created by Administrator on 2016-05-27.
  */
 public class News {
-    private int id;
-    private String title;
-    private String content;
-    private int img;
+    private int ID;
+    private String Title;
+    private String Content;
+    private String AddTime;
+    private String Author;
+    private String Url;
+    private String ImgUrl;
+    private Boolean IsTop;
 
-    public News(int id, String title, String content,int img) {
-        this.id = id;
-        this.title = title;
-        this.content = content;
-        this.img = img;
+    public int getID() {
+        return ID;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
     public String getTitle() {
-        return title;
+        return Title;
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        Title = title;
     }
 
     public String getContent() {
-        return content;
+        return Content;
     }
 
     public void setContent(String content) {
-        this.content = content;
+        Content = content;
     }
 
-    public int getImg() {
-        return img;
+    public String getAddTime() {
+        return AddTime;
     }
 
-    public void setImg(int img) {
-        this.img = img;
+    public void setAddTime(String addTime) {
+        AddTime = addTime;
     }
 
+    public String getAuthor() {
+        return Author;
+    }
 
+    public void setAuthor(String author) {
+        Author = author;
+    }
+
+    public String getUrl() {
+        return Url;
+    }
+
+    public void setUrl(String url) {
+        Url = url;
+    }
+
+    public String getImgUrl() {
+        return ImgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        ImgUrl = imgUrl;
+    }
+
+    public Boolean getTop() {
+        return IsTop;
+    }
+
+    public void setTop(Boolean top) {
+        IsTop = top;
+    }
+
+    public News(){
+
+    }
+
+    public News(int ID, String title, String content) {
+        this.ID = ID;
+        Title = title;
+        Content = content;
+    }
 }

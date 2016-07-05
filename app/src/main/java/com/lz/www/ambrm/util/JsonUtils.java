@@ -19,16 +19,10 @@ public class JsonUtils {
         List<User> uList = null;
         try {
             uList = new ArrayList<User>();
-            //"{\"code\":\"0\",\"msg\":\"成功\",\"count\":\"1\",\"data\":\"[{\"ID\":0,\"UserCode\":\"lz\",\"UserName\":null,\"Password\":\"123\",\"Mobile\":\"12557\",\"SBU\":null}]\"}"
-            String jsonStr= "{\"code\":\"0\",\"msg\":\"成功\",\"count\":\"1\",\"data\":[{\"ID\":0,\"UserCode\":\"lz\",\"UserName\":null,\"Password\":\"123\",\"Mobile\":\"12557\",\"SBU\":null}]}";
-//            String jsonStr= "{\"username\":\"张木生\",age:11,\"jicheng\":[{\"zhengshu\":\"PMP\",\"date\":\"2011年\"},{\"zhengshu\":\"信息系统项目管理师\",\"date\":\"2012年\"}],\"addr\":\"江西\"}";
-            JSONObject jsonObject = new JSONObject(jsonStr);
-
+            //String jsonStr= "{\"code\":\"0\",\"msg\":\"成功\",\"count\":\"1\",\"data\":[{\"ID\":0,\"UserCode\":\"lz\",\"UserName\":null,\"Password\":\"123\",\"Mobile\":\"12557\",\"SBU\":null},{\"ID\":0,\"UserCode\":\"lz\",\"UserName\":null,\"Password\":\"123\",\"Mobile\":\"12557\",\"SBU\":null}]}";
+            //jsonData="{\"code\":\"0\",\"msg\":\"成功\",\"count\":\"2\",\"data\":[{\"ID\":0,\"UserCode\":\"lz\",\"UserName\":null,\"Password\":\"123\",\"Mobile\":\"12557\",\"SBU\":null},{\"ID\":0,\"UserCode\":\"lz\",\"UserName\":null,\"Password\":\"123\",\"Mobile\":\"12557\",\"SBU\":null}]}";
+            JSONObject jsonObject = new JSONObject(jsonData);
             JSONArray jsonArray=jsonObject.getJSONArray("data");
-//            String code=jsonObject.getString("code");
-//            String msg = jsonObject.getString("msg");
-//            String count=jsonObject.getString("count");
-//            String data = jsonObject.getString("data");
             for (int i = 0; i < jsonArray.length(); i++) {
                 User u=new User();
                 JSONObject o = jsonArray.getJSONObject(i);

@@ -12,15 +12,16 @@ import android.widget.TextView;
 import com.lz.www.ambrm.R;
 import com.lz.www.ambrm.model.News;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 /**
  * Created by Administrator on 2016-05-30.
  */
 public class NewsAdapter extends BaseAdapter {
-    private LinkedList<News> mNewsList;
+    public ArrayList<News> mNewsList;
     private Context mContext;
-    public NewsAdapter(LinkedList<News> newsList, Context context) {
+    public NewsAdapter(ArrayList<News> newsList, Context context) {
         this.mNewsList=newsList;
         this.mContext=context;
     }
@@ -55,7 +56,7 @@ public class NewsAdapter extends BaseAdapter {
         }else {
             holder=(ViewHolder)view.getTag();
         }
-        holder.imgTP.setBackgroundResource(mNewsList.get(i).getImg());
+        //holder.imgTP.setBackgroundResource();
         holder.tvTitle.setText(mNewsList.get(i).getTitle());
         holder.tvContent.setText(mNewsList.get(i).getContent());
         return view;
