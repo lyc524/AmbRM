@@ -1,7 +1,7 @@
 package com.lz.www.ambrm.ui;
 
 import android.app.Fragment;
-import android.app.VoiceInteractor;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -10,25 +10,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lz.www.ambrm.R;
-import com.lz.www.ambrm.model.HttpResponse;
 import com.lz.www.ambrm.model.News;
-import com.lz.www.ambrm.model.User;
 import com.lz.www.ambrm.net.HttpService;
 import com.lz.www.ambrm.util.Config;
-import com.lz.www.ambrm.util.JsonUtils;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 
 /**
  * Created by Administrator on 2016-06-01.
@@ -39,7 +33,6 @@ public class DaoFragment extends Fragment implements AdapterView.OnItemClickList
     public NewsAdapter mAdapter = null;
     public ListView lvNews;
     private TextView btnToList;
-
 
     public DaoFragment() {
     }
@@ -109,7 +102,7 @@ public class DaoFragment extends Fragment implements AdapterView.OnItemClickList
                     for (int i = 0; i < jsonArray.length(); i++) {
                         News m = new News();
                         JSONObject o = jsonArray.getJSONObject(i);
-                        m.setID(o.getInt("ID"));
+                        m.setId(o.getInt("ID"));
                         m.setTitle(o.getString("Title"));
                         m.setContent(o.getString("Content"));
                         m.setUrl(o.getString("Url"));

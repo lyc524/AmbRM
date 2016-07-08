@@ -1,82 +1,80 @@
 package com.lz.www.ambrm.model;
 
-import java.util.Date;
-
 /**
  * Created by Administrator on 2016-05-27.
  */
 public class News {
-    private int ID;
-    private String Title;
-    private String Content;
-    private String AddTime;
-    private String Author;
-    private String Url;
-    private String ImgUrl;
-    private Boolean IsTop;
+    private int id;
+    private String title;
+    private String content;
+    private String addTime;
+    private String author;
+    private String url;
+    private String imgUrl;
+    private Boolean isTop;
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
-        return Title;
+        return title;
     }
 
     public void setTitle(String title) {
-        Title = title;
+        this.title = title;
     }
 
     public String getContent() {
-        return Content;
+        return content;
     }
 
     public void setContent(String content) {
-        Content = content;
+        this.content = content;
     }
 
     public String getAddTime() {
-        return AddTime;
+        return addTime;
     }
 
     public void setAddTime(String addTime) {
-        AddTime = addTime;
+        this.addTime = addTime;
     }
 
     public String getAuthor() {
-        return Author;
+        return author;
     }
 
     public void setAuthor(String author) {
-        Author = author;
+        this.author = author;
     }
 
     public String getUrl() {
-        return Url;
+        return url;
     }
 
     public void setUrl(String url) {
-        Url = url;
+        this.url = url;
     }
 
     public String getImgUrl() {
-        return ImgUrl;
+        return imgUrl;
     }
 
     public void setImgUrl(String imgUrl) {
-        ImgUrl = imgUrl;
+        this.imgUrl = imgUrl;
     }
 
     public Boolean getTop() {
-        return IsTop;
+        return isTop;
     }
 
     public void setTop(Boolean top) {
-        IsTop = top;
+        isTop = top;
     }
 
     public News(){
@@ -84,8 +82,8 @@ public class News {
     }
 
     public News(int ID, String title, String content) {
-        this.ID = ID;
-        Title = title;
-        Content = content;
+        this.id = ID;
+        this.title = title;
+        this.content = content;
     }
 }

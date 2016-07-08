@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/5/27.
  */
-public class ContactsProvider {
+public class ContactsResolver {
 
     /**
      * 获取手机号返回实体集

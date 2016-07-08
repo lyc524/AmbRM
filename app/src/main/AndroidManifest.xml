@@ -27,12 +27,20 @@
         <activity android:name=".ui.RegisterActivity" />
         <activity android:name=".rubbish.WelcomeActivity" />
         <activity android:name=".ui.ContractsActivity"/>
+        <activity android:name=".ui.AmbLogActivity"/>
+        <activity android:name=".ui.ShakeActivity"/>
 
         <receiver android:name=".Broadcast.MyBroadcastReceiver">
             <intent-filter>
                 <action android:name="com.lz.www.ambrm.Broadcast.MYBC" />
             </intent-filter>
         </receiver>
+
+        <provider
+            android:name=".ContentProvider.LogProvider"
+            android:authorities="com.lz.www.ambrm.ContentProvider.LogProvider"
+            android:exported="true"
+            />
 
     </application>
 

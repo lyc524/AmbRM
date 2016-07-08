@@ -2,11 +2,10 @@ package com.lz.www.ambrm.ui;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.NavUtils;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
-import com.lz.www.ambrm.ContentProvider.ContactsProvider;
+import com.lz.www.ambrm.ContentProvider.ContactsResolver;
 import com.lz.www.ambrm.R;
 import com.lz.www.ambrm.model.Contacts;
 
@@ -31,7 +30,7 @@ public class ContractsActivity extends Activity {
 
         List<Map<String, String>> list = new ArrayList<Map<String, String>>();
 
-        List<Contacts> contactsArrayList = new ContactsProvider().getContacts(this);
+        List<Contacts> contactsArrayList = new ContactsResolver().getContacts(this);
         for (int i=0;i<contactsArrayList.size();i++){
             Map<String,String> items=new HashMap<String, String>();
             items.put("name",contactsArrayList.get(i).getName());

@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
@@ -33,8 +32,8 @@ public class ShuFragment extends Fragment {
             R.drawable.b2, R.drawable.b3, R.drawable.b4,
             R.drawable.b1, R.drawable.b2, R.drawable.b3,
             R.drawable.b4 };
-    private String[] iconName = { "通讯录", "日历", "照相机", "时钟", "游戏", "短信", "铃声",
-            "设置", "语音", "天气", "浏览器", "视频" };
+    private String[] iconName = { "通讯录", "日历", "摇一摇", "时钟", "游戏", "短信", "铃声",
+            "设置", "语音", "天气", "浏览器", "系统日志" };
 
 
 
@@ -62,6 +61,14 @@ public class ShuFragment extends Fragment {
                     case 0:
                         Intent it=new Intent(getActivity(),ContractsActivity.class);
                         startActivity(it);
+                        break;
+                    case 2:
+                        Intent it2=new Intent(getActivity(),ShakeActivity.class);
+                        startActivity(it2);
+                        break;
+                    case 11:
+                        Intent it11=new Intent(getActivity(), AmbLogActivity.class);
+                        startActivity(it11);
                         break;
                     default:
                         Toast.makeText(getActivity(),"你点击了第" + i + "项",Toast.LENGTH_SHORT).show();
