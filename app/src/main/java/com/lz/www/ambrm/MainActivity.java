@@ -19,10 +19,12 @@ import com.lz.www.ambrm.net.HttpService;
 import com.lz.www.ambrm.ui.HomeActivity;
 import com.lz.www.ambrm.util.Config;
 import com.lz.www.ambrm.util.JsonUtils;
+import com.lz.www.ambrm.util.SPUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,13 +48,16 @@ public class MainActivity extends AppCompatActivity {
         btnTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ContentValues values=new ContentValues();
-                values.put("Source","[Test]");
-                values.put("Content","this is a test");
-                SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
-                values.put("AddTime",df.format(new Date()));
-                resolver.insert(Config.AMBLOG_URI, values);
-                Toast.makeText(MainActivity.this,"添加成功",Toast.LENGTH_SHORT).show();
+//                ContentValues values=new ContentValues();
+//                values.put("Source","[Test]");
+//                values.put("Content","this is a test");
+//                SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+//                values.put("AddTime",df.format(new Date()));
+//                resolver.insert(Config.AMBLOG_URI, values);
+//                Toast.makeText(MainActivity.this,"添加成功",Toast.LENGTH_SHORT).show();
+
+                SPUtils.put(MainActivity.this,"test","我是测试");
+
 
             }
         });
@@ -64,20 +69,24 @@ public class MainActivity extends AppCompatActivity {
         btnQuery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Cursor cursor=resolver.query(Config.AMBLOG_URI,null,null,null,null);
-                String result="";
-                while (cursor.moveToNext()) {
-                    String id = cursor.getString(cursor.getColumnIndex("ID"));
-                    String Source = cursor.getString(cursor.getColumnIndex("Source"));
-                    String content = cursor.getString(cursor.getColumnIndex("Content"));
-                    String time = cursor.getString(cursor.getColumnIndex("AddTime"));
-                    result += "id=" + id + "; Source=" + Source + "; content=" + content + "; time=" + time + "; ";
-                }
-                if("".equals(result)){
-                    textView.setText("没有记录");
-                }else {
-                    textView.setText(result);
-                }
+//                Cursor cursor=resolver.query(Config.AMBLOG_URI,null,null,null,null);
+//                String result="";
+//                while (cursor.moveToNext()) {
+//                    String id = cursor.getString(cursor.getColumnIndex("ID"));
+//                    String Source = cursor.getString(cursor.getColumnIndex("Source"));
+//                    String content = cursor.getString(cursor.getColumnIndex("Content"));
+//                    String time = cursor.getString(cursor.getColumnIndex("AddTime"));
+//                    result += "id=" + id + "; Source=" + Source + "; content=" + content + "; time=" + time + "; ";
+//                }
+//                if("".equals(result)){
+//                    textView.setText("没有记录");
+//                }else {
+//                    textView.setText(result);
+//                }
+
+               Object time = SPUtils.get(MainActivity.this,"ScheduleTime","0");
+                Object content=SPUtils.get(MainActivity.this,"ScheduleContent","0");
+                Toast.makeText(MainActivity.this,time.toString()+" "+content.toString(),Toast.LENGTH_SHORT).show();
 
             }
         });

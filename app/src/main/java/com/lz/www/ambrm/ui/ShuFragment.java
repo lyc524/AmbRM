@@ -32,7 +32,7 @@ public class ShuFragment extends Fragment {
             R.drawable.b2, R.drawable.b3, R.drawable.b4,
             R.drawable.b1, R.drawable.b2, R.drawable.b3,
             R.drawable.b4 };
-    private String[] iconName = { "通讯录", "日历", "摇一摇", "时钟", "游戏", "短信", "铃声",
+    private String[] iconName = { "通讯录", "日程安排", "摇一摇", "时钟", "游戏", "短信", "铃声",
             "设置", "语音", "天气", "浏览器", "系统日志" };
 
 
@@ -59,8 +59,12 @@ public class ShuFragment extends Fragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (i){
                     case 0:
-                        Intent it=new Intent(getActivity(),ContractsActivity.class);
-                        startActivity(it);
+                        Intent it0=new Intent(getActivity(),ContractsActivity.class);
+                        startActivity(it0);
+                        break;
+                    case 1:
+                        Intent it1=new Intent(getActivity(),ScheduleActivity.class);
+                        startActivity(it1);
                         break;
                     case 2:
                         Intent it2=new Intent(getActivity(),ShakeActivity.class);
