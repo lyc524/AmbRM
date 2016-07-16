@@ -13,7 +13,7 @@ import android.widget.Toast;
 import com.lz.www.ambrm.R;
 import com.lz.www.ambrm.model.BigSorts;
 import com.lz.www.ambrm.model.SubSorts;
-import com.lz.www.ambrm.ui.FaAdapter;
+import com.lz.www.ambrm.ui.Adapter.FaAdapter;
 
 import java.util.ArrayList;
 

@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.lz.www.ambrm.R;
 import com.lz.www.ambrm.model.News;
+import com.lz.www.ambrm.ui.Adapter.NewsAdapter;
 
 import java.util.LinkedList;
 import java.util.List;

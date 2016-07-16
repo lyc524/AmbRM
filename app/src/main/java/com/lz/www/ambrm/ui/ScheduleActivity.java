@@ -1,6 +1,9 @@
 package com.lz.www.ambrm.ui;
 
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -53,7 +56,29 @@ public class ScheduleActivity extends Activity {
                 SPUtils.put(ScheduleActivity.this, "ScheduleTime", scheduleTime);
                 SPUtils.put(ScheduleActivity.this, "ScheduleContent", scheduleContent);
 
-                Toast.makeText(ScheduleActivity.this, scheduleTime, Toast.LENGTH_SHORT).show();
+
+
+
+                //定时提醒
+                Intent it=new Intent(ScheduleActivity.this,ScheduleViewActivity.class);
+                it.putExtra("content",scheduleContent);
+
+                PendingIntent pi=PendingIntent.getActivity(ScheduleActivity.this,0,it,0);
+
+                AlarmManager alarmManager=(AlarmManager)getSystemService(ALARM_SERVICE);
+
+                long sTimes=0;
+                try {
+                    Date sTime=CommonUtils.ConverToDate(scheduleTime);
+                    sTimes=sTime.getTime();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                alarmManager.set(AlarmManager.RTC_WAKEUP,sTimes,pi);
+
+
+                Toast.makeText(ScheduleActivity.this,"日程设置完成！"+scheduleTime, Toast.LENGTH_SHORT).show();
+
             }
         });
 
