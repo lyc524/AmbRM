@@ -7,14 +7,11 @@ public class News {
     private int id;
     private String title;
     private String content;
-    private int img;
-
-    public News(int id, String title, String content,int img) {
-        this.id = id;
-        this.title = title;
-        this.content = content;
-        this.img = img;
-    }
+    private String addTime;
+    private String author;
+    private String url;
+    private String imgUrl;
+    private Boolean isTop;
 
     public int getId() {
         return id;
@@ -40,13 +37,53 @@ public class News {
         this.content = content;
     }
 
-    public int getImg() {
-        return img;
+    public String getAddTime() {
+        return addTime;
     }
 
-    public void setImg(int img) {
-        this.img = img;
+    public void setAddTime(String addTime) {
+        this.addTime = addTime;
     }
 
+    public String getAuthor() {
+        return author;
+    }
 
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
+
+    public Boolean getTop() {
+        return isTop;
+    }
+
+    public void setTop(Boolean top) {
+        isTop = top;
+    }
+
+    public News(){
+
+    }
+
+    public News(int ID, String title, String content) {
+        this.id = ID;
+        this.title = title;
+        this.content = content;
+    }
 }

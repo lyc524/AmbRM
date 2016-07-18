@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.lz.www.ambrm.R;
 import com.lz.www.ambrm.model.News;
+import com.lz.www.ambrm.ui.Adapter.NewsAdapter;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -32,12 +33,12 @@ public class NewsIndexActivity extends Activity implements AdapterView.OnItemCli
         mContext=NewsIndexActivity.this;
         lvNews=(ListView)findViewById(R.id.lvDao);
         mNewsList=new LinkedList<News>();
-        mNewsList.add(new News(1,"B1","b1",R.drawable.b1));
-        mNewsList.add(new News(2,"B2","b2",R.drawable.b2));
-        mNewsList.add(new News(3,"B3","b3",R.drawable.b3));
-        mNewsList.add(new News(4,"B4","b4",R.drawable.b4));
-
-        mAdapter=new NewsAdapter((LinkedList<News>)mNewsList,mContext);
+//        mNewsList.add(new News(1,"B1","b1",R.drawable.b1));
+//        mNewsList.add(new News(2,"B2","b2",R.drawable.b2));
+//        mNewsList.add(new News(3,"B3","b3",R.drawable.b3));
+//        mNewsList.add(new News(4,"B4","b4",R.drawable.b4));
+//
+//        mAdapter=new NewsAdapter((LinkedList<News>)mNewsList,mContext);
         lvNews.setAdapter(mAdapter);
         lvNews.setOnItemClickListener(this);
 

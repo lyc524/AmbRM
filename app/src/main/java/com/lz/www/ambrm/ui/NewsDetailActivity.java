@@ -6,6 +6,7 @@ import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.lz.www.ambrm.R;
 
@@ -24,15 +25,22 @@ public class NewsDetailActivity extends Activity {
         webView.loadUrl("http://www.simchn.com/");
         webView.setWebViewClient(new MyWebViewClient());
 
-        Button btnBack=(Button)findViewById(R.id.btnNewsBack);
+        TextView tvTitle=(TextView)findViewById(R.id.tvTitle);
+        tvTitle.setText("新闻详细");
+
+        Button btnBack=(Button)findViewById(R.id.btnGoBack);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                webView.goBack();
+                if(webView.canGoBack())
+                    webView.goBack();
+                else
+                    finish();
             }
         });
 
-        Button btnAhead=(Button)findViewById(R.id.btnNewsAhead);
+        Button btnAhead=(Button)findViewById(R.id.btnForward);
+        btnAhead.setVisibility(View.VISIBLE);
         btnAhead.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

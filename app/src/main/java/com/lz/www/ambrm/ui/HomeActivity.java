@@ -8,6 +8,10 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.lz.www.ambrm.R;
+import com.lz.www.ambrm.ui.Fragment.DaoFragment;
+import com.lz.www.ambrm.ui.Fragment.FaFragment;
+import com.lz.www.ambrm.ui.Fragment.ShuFragment;
+import com.lz.www.ambrm.ui.Fragment.WoFragment;
 
 /**
  * Created by Administrator on 2016-05-25.

@@ -26,7 +26,7 @@
             android:id="@+id/tvMeHead"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="点击登录"
+            android:text="修改头像"
             android:paddingLeft="2dp"
             android:layout_toRightOf="@id/ivMeLogo"
             android:layout_centerVertical="true"
@@ -51,7 +51,7 @@
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:drawableTop="@drawable/b1"
-            android:text="我的B1"
+            android:text="二维码名片"
             android:gravity="center"/>
 
         <TextView
@@ -60,7 +60,7 @@
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:drawableTop="@drawable/b2"
-            android:text="我的B2"
+            android:text="扫一扫"
             android:gravity="center"/>
 
         <TextView
@@ -69,7 +69,7 @@
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:drawableTop="@drawable/b3"
-            android:text="我的B3"
+            android:text="我要建议"
             android:gravity="center"/>
 
     </LinearLayout>
@@ -78,7 +78,7 @@
         android:id="@+id/tvLine1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="我的LINE1"
+        android:text="我的昵称"
         android:layout_marginTop="50dp"
         android:textSize="15sp"
         android:gravity="center_vertical"
@@ -91,8 +91,8 @@
         android:id="@+id/tvLine2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="我的LINE1"
-        android:layout_marginTop="20dp"
+        android:text="联系电话"
+        android:layout_marginTop="10dp"
         android:textSize="15sp"
         android:gravity="center_vertical"
         android:background="#cccccc"
@@ -104,14 +104,37 @@
         android:id="@+id/tvLine3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="我的LINE1"
-        android:layout_marginTop="20dp"
+        android:text="个人密码"
+        android:layout_marginTop="10dp"
         android:textSize="15sp"
         android:gravity="center_vertical"
         android:background="#cccccc"
         android:drawableLeft="@drawable/setting"
         android:drawableRight="@drawable/right2"
         android:drawablePadding="50dp"/>
+
+    <TextView
+        android:id="@+id/tvLine4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="系统帮助"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp"
+        android:gravity="center_vertical"
+        android:background="#cccccc"
+        android:drawableLeft="@drawable/setting"
+        android:drawableRight="@drawable/right2"
+        android:drawablePadding="50dp"/>
+
+
+    <Button
+        android:id="@+id/btnLoginOut"
+        android:text="退出登录"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 
 </LinearLayout>
